@@ -6,11 +6,11 @@
     var artists = new string[]
     {
         "Script: Dan Slott",
-        "Pencils: Humberto Ramos",
-        "Inks: Victor Olazaba",
-        "Colors: Edgar Delgado",
-        "Letters: Chris Eliopoulos"
-    };      
+        "pencils: humberto ramos",
+        "inks: victor olazaba",
+        "colors: edgar delgado",
+        "letters: chris eliopoulos"
+    };
 }
 
 <!DOCTYPE html>
@@ -22,14 +22,26 @@
 </head>
 <body>
     <div>
-    <h1>@seriesTitle</h1>
-    <h2>Issue #@issueNumber</h2>
+        <h1>@seriesTitle</h1>
+        <h2>Issue #@issueNumber</h2>
 
-    <h5>Description :</h5>
-    <div>@Html.Raw(description)</div>
+        <h5>Description :</h5>
+        <div>@Html.Raw(description)</div>
+        @if (artists.Length > 0)
+        {
+            <h5>Artists:</h5>
+            <div>
+            <ul>
+            @foreach (var artist in artists)
+            {
+            <li>@artist</li>
 
-    <h5>Artists:</h5>
-    <div>@artists</div>
+            }
+                </ul>
+            </div>
+            
+        }
+
     </div>
 </body>
 </html>
