@@ -10,7 +10,21 @@ namespace WebApplication1.Controllers
     {
         public ActionResult Detail()
         {
-            return View();
+            ViewBag.SeriesTitle = "The Amazing Spider-Man";
+            ViewBag.IssueNumber = 700;
+            ViewBag.Description = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives... <strong>will Peter Parker?</strong></p>";
+            ViewBag.Artists = new string[]
+            {
+                "Script: Dan Slott",
+                "pencils: humberto ramos",
+                "inks: victor olazaba",
+                "colors: edgar delgado",
+                "letters: chris eliopoulos"
+
+                };
+
+                return View();
+        
         }
     }
 }
